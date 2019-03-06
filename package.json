@@ -1,0 +1,21 @@
+{
+  "name": "rd-fast-test",
+  "version": "0.0.1",
+  "description": "开发用的自测工具",
+  "main": "index.js",
+  "dependencies": {
+    "mysql": "^2.16.0",
+    "node-watch": "^0.6.0",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/ZuoYeHeZiQA/rd-fast-test.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
