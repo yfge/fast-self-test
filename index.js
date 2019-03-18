@@ -1,5 +1,6 @@
 const config = require ( './config')
 const watch = require('node-watch')
+const http = require('./tools/http')
 const arg = 'pay'
 const cfg = config[arg]
 const log = (msg) =>{
@@ -10,14 +11,20 @@ const run_test = async()=>{
         log(`the .${cfg.type} file in ${cfg.dir} changed,run the test`)
         log(`the host is ${cfg.host}`)
         
-        for(let testCase in cfg.cases){
-        
+        cfg.cases.forEach(async (testCase)=>{
+       		 
             let url = cfg.host + '/'+testCase.uri
-            let method =testCase.method && 'get'
+            let method =testCase.method || 'get'
+			let postdata = testCase.data || {}	
             console.log({url,method})
+			try{
+				let data = await http[method](url,postdata)
+				console.log(data)
+			}catch(e){
+				console.log(e)
+			}
 
-
-        }
+        })
 
 
 }
