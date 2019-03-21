@@ -13,7 +13,6 @@ const run_test = async()=>{
         log(`the host is ${cfg.host}`)
         let all = {}
         for(let i = 0 ; i < cfg.cases.length; i ++)
-       // cfg.cases.forEach(async (testCase)=>
         {
             let testCase = cfg.cases[i]
             let url = cfg.host + '/'+testCase.uri
@@ -25,15 +24,13 @@ const run_test = async()=>{
                     let str = postdata[p]
                     if (str.indexOf('#') == 0 ) {
                         let key = str.substr(1)
-         //               console.log(key)
                         postdata[p] = _.get(all,key)
                     }
                 }
 				let data = await http[method](url,postdata)
                 all[testCase.key].req = postdata 
                 all[testCase.key].res = data 
-        //       console.log(all)
-               console.log({name:testCase.name,url,method,req:postdata,res:data})
+                console.log({name:testCase.name,url,method,req:postdata,res:data})
 			}catch(e){
 				console.log(e)
 			}
