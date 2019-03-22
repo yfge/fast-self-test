@@ -12,7 +12,7 @@ module.exports = {
             method: 'post',
             data: {
                 mobile : '13521510781',
-                source: 'Ocr'
+                source: 'iOSOCR'
             },
         },
         {
@@ -24,7 +24,7 @@ module.exports = {
             data: {
                 mobile : '13521510781',
                 code: '#req.res.data',
-                source: 'Ocr'
+                source: 'iOSOCR'
             }
          },
         {
@@ -34,7 +34,7 @@ module.exports = {
             uri: '/v1/auth/info-by-token',
             method: 'post',
               data: {
-                source: 'Ocr',
+                source: 'iOSOCR',
                 token : '#check.res.data.token',
             }
   },

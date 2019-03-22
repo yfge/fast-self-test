@@ -37,6 +37,6 @@ const run_test = async()=>{
         }
 }
 
-watch(cfg.dir , {recursive: true,filter : /\.lua$/},run_test)
+watch(cfg.dir , {recursive: true,filter : new RegExp(`\.${cfg.type}$`)},run_test)
 run_test()
 

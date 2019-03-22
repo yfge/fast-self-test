@@ -1,6 +1,4 @@
 const request = require('request')
-
-
 let execReq = async(opt)=>{
     return new Promise((resolve,reject)=>{
         request(opt,(err,res,body)=>{
@@ -12,7 +10,6 @@ let execReq = async(opt)=>{
     })
 })
 }
-
 let getReq = async(url) =>{
     return await execReq({
         url:url,
@@ -23,7 +20,6 @@ let getReq = async(url) =>{
             }
             })
 }
-            
 let postReq = async (url,data)=>{
     return await execReq({
         url:url,
@@ -35,9 +31,8 @@ let postReq = async (url,data)=>{
             }
         })
 }
-           
 module.exports = {
     exec:execReq,
     get:getReq,
     post:postReq
-    }
+}
