@@ -11,7 +11,7 @@ module.exports = {
             uri: '/v1/auth/require-checkcode',
             method: 'post',
             data: {
-                mobile : '13521510781',
+                mobile : '*randomMobile',
                 source: 'iOSOCR'
             },
         },
@@ -22,7 +22,7 @@ module.exports = {
             uri: '/v1/auth/login-checkcode',
             method: 'post',
             data: {
-                mobile : '13521510781',
+                mobile : '#req.req.mobile',
                 code: '#req.res.data',
                 source: 'iOSOCR'
             }
