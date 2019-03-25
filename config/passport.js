@@ -37,7 +37,7 @@ module.exports = {
                 source: 'iOSOCR',
                 token : '#check.res.data.token',
             }
-  },
+         },
         {
             uri: '/v1/auth/logout',
             name : '登出',
@@ -45,7 +45,19 @@ module.exports = {
            data: {
                 token : '#check.res.data.token',
             }
-     }
+        },
+        {
+            name : '重新验证token',
+            index: 4,
+            key: 'info',
+            uri: '/v1/auth/info-by-token',
+            method: 'post',
+              data: {
+                source: 'iOSOCR',
+                token : '#check.res.data.token',
+            }
+         },
+
     ]
 }
 
